@@ -21,7 +21,6 @@ public class Contact implements Serializable {
     private int version;
     private String firstName;
     private String lastName;
-    private DateTime birthDate;
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
@@ -46,12 +45,6 @@ public class Contact implements Serializable {
         return lastName;
     }
 
-    @Column(name = "BIRTH_DATE")
-    @Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
-    public DateTime getBirthDate() {
-        return birthDate;
-    }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -68,13 +61,9 @@ public class Contact implements Serializable {
         this.lastName = lastName;
     }
 
-    public void setBirthDate(DateTime birthDate) {
-        this.birthDate = birthDate;
-    }
-
     @Override
     public String toString() {
         return "Contact - Id: " + id + ", First name: " + firstName
-                + ", Last name: " + lastName + ", Birthday: " + birthDate;
+                + ", Last name: " + lastName;
     }
 }
