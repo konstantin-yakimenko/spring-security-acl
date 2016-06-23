@@ -5,8 +5,7 @@ insert into contact (first_name, last_name) values
 insert into contact (first_name, last_name) values
     ('John', 'Smith');
 
-    
-    
+
 
 INSERT INTO acl_sid (id, principal, sid) VALUES
 	(1, 1, 'john');
