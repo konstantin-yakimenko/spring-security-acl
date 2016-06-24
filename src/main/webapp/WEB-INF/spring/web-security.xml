@@ -16,14 +16,27 @@
 		<security:intercept-url pattern="/acl/role/admin" 		access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/acl/role/user" 		access="hasRole('ROLE_USER')" />
 		<security:intercept-url pattern="/acl/role/visitor" 	access="hasRole('ROLE_VISITOR')" />
-
+<!-- 
 		<security:form-login 
 			login-page="/acl/auth/login" 
 			authentication-failure-url="/acl/auth/login?error=true"
-			default-target-url="/acl/bulletin/view" />
+			default-target-url="/acl/bulletin/view"
+			 />
+ -->
+
+		<security:form-login 
+			login-page="/krams/auth/login"
+			username-parameter="j_username" 
+			password-parameter="j_password" 
+			login-processing-url="../../j_spring_security_check" 
+			authentication-failure-url="/krams/auth/login?error=true" 
+			 />
 
 		<security:logout invalidate-session="true" logout-success-url="/acl/auth/login" logout-url="/acl/auth/logout" />
-
+		<security:csrf disabled="true"/>
+		
+		
+		
 	</security:http>
 
 	<security:authentication-manager>

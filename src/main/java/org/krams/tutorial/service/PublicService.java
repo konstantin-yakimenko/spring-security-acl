@@ -36,6 +36,7 @@ public class PublicService implements GenericService {
 	
 	@Resource(name="dataSource")
 	public void setDataSource(DataSource dataSource) {
+		System.out.println("YakimKY - PublicService - dataSource = " + dataSource);
 	    this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 

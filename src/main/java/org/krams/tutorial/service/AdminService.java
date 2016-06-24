@@ -36,6 +36,7 @@ public class AdminService implements GenericService {
 	
 	@Resource(name="dataSource")
 	public void setDataSource(DataSource dataSource) {
+		System.out.println("YakimKY - AdminService - dataSource = " + dataSource);
 	    this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 
